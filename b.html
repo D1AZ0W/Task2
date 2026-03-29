@@ -1,0 +1,26 @@
+<html>
+    <head><title>LIST an array</title>
+    </head>
+    <body>
+        <style>
+            ul{
+                font-size:20px;
+                color:red;
+                font-family:serif;
+                font-style:italic
+            }
+        </style>
+        <h2>JavaScript Arrays</h2>
+        <p id="demo"></p>
+        <script>
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        let fLen = fruits.length;
+        let text = "<ul>";
+        for (let i = 0; i < fLen; i++) {
+        text += "<li>" + fruits[i] + "</li>";
+        }
+        text += "</ul>";
+        document.getElementById("demo").innerHTML = text;
+        </script>
+    </body>
+</html>

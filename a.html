@@ -1,0 +1,39 @@
+<html>
+    <head><title>Test</title>
+        <style>
+            .button{
+                width: 500px;
+                height:100px;
+                background-color: rgb(93, 93, 252);
+                font-size: x-large;
+                font-family: 'Times New Roman';
+                color:rgb(70, 16, 26)
+            }
+            .demo{
+                font-size:xx-large;
+                color: darkorange;
+                background-color: darkred;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            function run(){
+                document.getElementById("Sh").innerHTML="SHEEEESH!!"
+            }
+            function displayDate(){
+                document.getElementById("demo").innerHTML=Date();
+            }
+            function clearcontent(){
+                document.getElementById("demo").innerHTML=" ";
+                document.getElementById("Sh").innerHTML=" ";
+            }
+        </script>
+        <button onclick="run()" class="button">Click</button>
+        <button onclick="displayDate()" class="button">Date</button>
+        <button onclick="clearcontent()" class="button">Clear</button>
+        <p id="demo" class="demo"></p><br>
+        <p id="Sh" class="demo"></p>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qno.8</title>
+    <style>
+        .box{
+            border: 5px solid transparent;
+            padding: 20px;
+        }
+        #first{
+            background-color: red;
+        }
+        #second{
+            background-color: blue;
+        }
+        #third{
+            background-color: green;
+        }
+    </style>
+    <script>
+        function change(){
+            document.getElementById("first").style.backgroundColor="yellow";
+            document.getElementById("second").style.backgroundColor="green";
+            document.getElementById("third").style.backgroundColor="red";
+            document.getElementById("first").style.borderColor="green";
+            document.getElementById("second").style.borderColor="yellow";
+            document.getElementById("third").style.borderColor="blue";
+        }
+    </script>
+</head>
+<body>
+    <div id="first" class="box">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam nulla, ipsa, maxime vel a officiis dolorem deserunt facere voluptatem cupiditate vero labore debitis libero, odit dolor quod! Eveniet, qui fugit! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad quas incidunt eligendi facilis voluptatum aut quod voluptas, atque tenetur quibusdam unde eaque nemo, ducimus deleniti ea velit. Non, omnis suscipit? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum at voluptatibus quo! Beatae, repellat in neque impedit quo omnis accusamus eveniet asperiores mollitia tempora rem cupiditate ipsum doloribus ullam dolor.
+    </div><br>
+    <div id="second" class="box">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam nulla, ipsa, maxime vel a officiis dolorem deserunt facere voluptatem cupiditate vero labore debitis libero, odit dolor quod! Eveniet, qui fugit! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad quas incidunt eligendi facilis voluptatum aut quod voluptas, atque tenetur quibusdam unde eaque nemo, ducimus deleniti ea velit. Non, omnis suscipit? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum at voluptatibus quo! Beatae, repellat in neque impedit quo omnis accusamus eveniet asperiores mollitia tempora rem cupiditate ipsum doloribus ullam dolor.
+    </div><br>
+    <div id="third" class="box">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam nulla, ipsa, maxime vel a officiis dolorem deserunt facere voluptatem cupiditate vero labore debitis libero, odit dolor quod! Eveniet, qui fugit! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad quas incidunt eligendi facilis voluptatum aut quod voluptas, atque tenetur quibusdam unde eaque nemo, ducimus deleniti ea velit. Non, omnis suscipit? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum at voluptatibus quo! Beatae, repellat in neque impedit quo omnis accusamus eveniet asperiores mollitia tempora rem cupiditate ipsum doloribus ullam dolor.
+    </div>
+    <button type="button" onclick="change()">Change</button>
+</body>
+</html>

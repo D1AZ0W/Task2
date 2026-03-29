@@ -1,0 +1,131 @@
+<html>
+    <head><title>this is form(1)</title></head>
+    <style>
+        .welcome{
+            text-align: center;
+            font-size:xx-large;
+            font-family: serif;
+            color:darkblue;
+        }
+        select {
+            width: 40%;
+            margin:3px;
+            padding: 16px 20px;
+            border: none;
+            border-radius: 4px;
+                }
+        input[type=text]
+                {
+                     width: 40%;
+                    margin:3px;
+                      padding: 12px;
+                      border: 2px solid #ccc;
+                      border-radius: 4px;
+                    resize: vertical;
+                    
+                }
+        label
+            {
+                width: 15%;
+                padding: 12px 12px 12px 0;
+                display: inline-block;
+                color:rgb(255, 0, 0);
+                text-align:right;
+                text-transform:uppercase;
+                text-decoration:bold;
+            }
+        .view
+        {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            margin:12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;			
+            }
+        .view:hover 
+        {
+            background-color: #2804f1;
+        }
+        .clear 
+        {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            margin:12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;			
+            }
+        .clear:hover 
+        {
+            background-color: #e91717;
+        }
+
+        .final{
+                padding-left: 16%;
+                
+            }
+        .image{
+            width: 400px;
+            height:400px;
+        }
+        .form{
+            border-radius: 5px;
+            background-color: #af01f36e;
+            padding-left: 10%;
+            padding-top:20px;
+            width: 60%;
+            border-style: double;
+        }
+    </style>
+    <body background="images/background.jpg">
+        <p class="welcome"><u><b></b><i>WELCOME TO ONLINE SHOWROOM</i></u></p>
+        <form method="post" action="" class="form">
+            <label for="Name">Name:</label>
+            <input TYPE="TEXT" name="Name" placeholder="Enter Your Name:"> <br>				
+        <label for="Model">Model:</label>
+            <select id="Model" name="Model"  >
+                <option>----------</option>
+                <option name="A">BMW X3 Facelift</option>
+                <option name="B">BMW X1</option>
+                <option name="C">BMW 3 Series</option>
+                <option name="D">BMW 2 Series Gran Coupe</option>
+                <option name="E">BMW X7</option>
+            </select><br>
+            <div class="final">
+            <button type="button" class="view" onclick="printer()">View</button>
+            <button type="button" name="Clear" class="clear" onclick="removeImage()" class="view">Clear</button>
+        </form>
+        <p class="image" id="image"></p>
+        <script>
+            var myimage=new Image;
+            function printer(){
+                var x = document.getElementById("Model");
+                var mod=x.options[x.selectedIndex].text;
+                if(mod=="BMW X3 Facelift"){
+                    myimage.src="images/X3.jpg";
+                    document.getElementById("image").appendChild(myimage);}
+                else if(mod=="BMW X1"){
+                    myimage.src="images/bmw-x1-facelift-right-front-three-quarter2.jpeg";
+                    document.getElementById("image").appendChild(myimage);}
+                else if(mod=="BMW 3 Series"){
+                    myimage.src="images/BMW-3-Series-Exterior-167583.jpg";
+                    document.getElementById("image").appendChild(myimage);}
+                else if(mod=="BMW 2 Series Gran Coupe"){
+                    myimage.src="images/BMW2.jpeg";
+                    document.getElementById("image").appendChild(myimage);}
+                else if(mod=="BMW X7"){
+                    myimage.src="images/BMW-X7-Right-Front-Three-Quarter-164106.jpg";
+                    document.getElementById("image").appendChild(myimage);}
+                }
+            function removeImage(){
+                document.getElementById("image").removeChild(myimage);
+            }
+
+        </script>
+        
+        </div>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qno.9</title>
+    <script>
+        function operation(){
+            var op=parseInt(prompt("Enter what operation to perfrom: \n 1)Sum \n 2)Difference \n 3)Multiplication"));
+            var a=parseInt(document.getElementById("first").value);
+            var b=parseInt(document.getElementById("second").value);
+            if(op==1){
+                document.getElementById("output").innerHTML=a+b;
+            }
+            else if(op==2){
+                document.getElementById("output").innerHTML=a-b;
+            }
+            else if(op==3){
+                document.getElementById("output").innerHTML=a*b;
+            }
+        }
+    </script>
+</head>
+<body>
+    Enter first number:<input type="number" id="first"><br>
+    Enter second number:<input type="number" id="second"><br>
+    <button type="button" onclick="operation()">Operation</button><br>
+    Output:
+    <div id="output">
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Question 1</title>
+    </head>
+    <body>
+        <script>
+            const arr=[9];
+            alert("Enter 10 numbers")
+            for(var i=0;i<=9;i++){
+                arr[i]=parseInt(prompt());
+            }
+            var largest=arr[0];
+            var smallest=arr[0];
+            for(var j=1;j<=9;j++){
+                if(arr[j]<smallest){smallest=arr[j];}
+                if(arr[j]>largest){largest=arr[j];}
+            }
+            document.write("The largest one was",largest);
+            document.write("<br>The smallest one was",smallest);
+        </script>
+    </body>
+</html>
