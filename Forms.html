@@ -1,0 +1,151 @@
+<!-- form + css practice -->
+<html>
+    <head>
+          <Title>Registration</Title>
+    <style>
+    input[type=text]
+                {
+                     width: 50%;
+                    margin:3px;
+                      padding: 12px;
+                      border: 2px solid #ccc;
+                      border-radius: 4px;
+                    resize: vertical;
+                    
+                }
+            label
+            {
+                width: 15%;
+                padding: 12px 12px 12px 0;
+                display: inline-block;
+                color:rgb(8, 233, 75);
+                text-align:right;
+                text-transform:uppercase;
+                text-decoration:bold;
+            }
+    input[type=submit] 
+        {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            margin:12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;			
+            }
+        input[type=submit]:hover 
+        {
+            background-color: #2804f1;
+        }
+    input[type=reset] 
+        {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            margin:12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;			
+            }
+        input[type=reset]:hover 
+        {
+            background-color: #e91717;
+        }
+
+    input[type=radio]
+        {
+            width: 3%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type=checkbox]
+        {
+            width: 3%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+    select
+        {
+            width: 40%;
+            margin:3px;
+              padding: 12px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+            resize: vertical;
+        }
+         textarea
+        {
+            width: 40%;
+            height:130px;
+            margin:3px;
+              padding: 12px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+            resize: vertical;
+        }	
+            input[type=email],input[type=password],input[type=date]
+        {
+            width: 40%;
+            margin:3px;
+              padding: 12px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+            resize: vertical;
+        }
+    </style>
+    </head>
+    <body style="background-color: rgb(64, 111, 112); color: white;"> 
+        <h1>Register Here!!!</h1>
+    <form method="post" action="">
+            <label for="FName"> First Name:</label>
+            <INPUT TYPE="TEXT" NAME="FName" placeholder="Enter Your First Name:"> <br>				
+            <label for="LName"> Last Name: </label>
+            <input type="text" name="LName" placeholder="Enter Yout Last Name:"><br>
+            <label for="Number">Mobile No.:</label>
+            <input type="text" name="Number" placeholder="Enter Mobile No."><br>
+    <label for="Gender">Gender: </label>
+            <input type="radio" id="M" name="Gender">Male
+            <input type="radio" id="F" name="Gender">Female
+            <input type="radio" id="O" name="Gender">Other <br>
+    <label for="Hobbies">Hobbies:</label>
+            <input type="checkbox" id="Playing" name="Playing">Playing
+            <input type="checkbox" id="Dancing" name="Dancing">Dancing
+            <input type="checkbox" id="Singing" name="Singing">Singing
+            <input type="checkbox" id="Travelling" name="Travelling">Travelling
+            <input type="checkbox" id="Reading Nobel" name="Nobel">Reading Nobel  <br>
+    
+    <label for="Country">Country:</label>
+            <select id="Country" name="Country">
+                <option name="Nepal">Nepal</option>
+                <option name="India">India</option>
+                <option name="Pakistan">Pakistan</option>
+                <option name="USA">USA</option>
+                <option name="China">China</option>
+                <option name="Srilanka">Srilanka</option>
+                <option name="Australia">Australia</option>
+            </select><br>
+            <label for="Address">Address:</label>
+            <input type="text" id="address" name="address" placeholder="Enter Your Address"></textarea><br>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter Your email address"><br>
+    
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter Your Password"><br>
+    
+            <label for="DOB"> Date of Birth:</label>
+            <input type="Date" id="DOB" name="DOB"><br>
+    <label for="submitlabel"></label>
+            <input type="submit" name="Save">
+            <input type="reset" name="Clear">
+            </form>
+        </body>
+</html>
