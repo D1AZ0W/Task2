@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #eef7f9; }
+        button, input { padding: 8px; margin: 4px 0; }
+        .done { text-decoration: line-through; color: gray; cursor: pointer; }
+        span { cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Todo list</h2>
+    <p>Click a task to mark it done.</p>
+    <input type="text" id="taskInput" placeholder="New task">
+    <button onclick="addTask()">Add</button>
+    <button onclick="clearCompleted()">Clear done</button>
+    <div id="taskList"></div>
+
+    <script>
+        const tasks = [
+            { text: 'Review JS basics', completed: false },
+            { text: 'Practice loops', completed: true }
+        ];
+
+        function addTask() {
+            const input = document.getElementById('taskInput');
+            const text = input.value.trim();
+            if (text === '') {
+                alert('Type a task.');
+                return;
+            }
+            tasks.push({ text, completed: false });
+            input.value = '';
+            renderTasks();
+        }
+
+        function renderTasks() {
+            const container = document.getElementById('taskList');
+            if (tasks.length === 0) {
+                container.innerHTML = '<p>No tasks yet.</p>';
+                return;
+            }
+            let html = '<ul>';
+            tasks.forEach((task, index) => {
+                const className = task.completed ? 'done' : '';
+                html += `<li><span class="${className}" onclick="toggleTask(${index})">${task.text}</span></li>`;
+            });
+            html += '</ul>';
+            container.innerHTML = html;
+        }
+
+        function toggleTask(index) {
+            tasks[index].completed = !tasks[index].completed;
+            renderTasks();
+        }
+
+        function clearCompleted() {
+            const active = tasks.filter(task => !task.completed);
+            tasks.length = 0;
+            active.forEach(task => tasks.push(task));
+            renderTasks();
+        }
+
+        renderTasks();
+    </script>
+</body>
+</html>

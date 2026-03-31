@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f6f7fb; }
+        button, input { padding: 8px; margin: 4px 0; }
+    </style>
+</head>
+<body>
+    <h2>Number stats</h2>
+    <p>Type a number, then add it.</p>
+    <input type="number" id="numberInput" placeholder="Number">
+    <button onclick="addNumber()">Add</button>
+    <button onclick="showStats()">Show stats</button>
+    <button onclick="clearNumbers()">Clear</button>
+    <div id="stats"></div>
+    <div id="list"></div>
+
+    <script>
+        const numbers = [];
+
+        function addNumber() {
+            const input = document.getElementById('numberInput');
+            const value = parseFloat(input.value);
+            if (Number.isNaN(value)) {
+                alert('Enter a valid number.');
+                return;
+            }
+            numbers.push(value);
+            input.value = '';
+            renderList();
+        }
+
+        function renderList() {
+            const list = document.getElementById('list');
+            if (numbers.length === 0) {
+                list.innerHTML = '<p>No numbers yet.</p>';
+                return;
+            }
+            let html = '<strong>Numbers:</strong><ul>';
+            for (let i = 0; i < numbers.length; i += 1) {
+                html += `<li>${numbers[i]}</li>`;
+            }
+            html += '</ul>';
+            list.innerHTML = html;
+        }
+
+        function showStats() {
+            if (numbers.length === 0) {
+                alert('Add some numbers first.');
+                return;
+            }
+            const sum = getSum(numbers);
+            const average = sum / numbers.length;
+            const min = Math.min(...numbers);
+            const max = Math.max(...numbers);
+            document.getElementById('stats').innerHTML = `Count: ${numbers.length} | Sum: ${sum} | Avg: ${average.toFixed(2)} | Min: ${min} | Max: ${max}`;
+        }
+
+        function getSum(values) {
+            let total = 0;
+            for (let i = 0; i < values.length; i += 1) {
+                total += values[i];
+            }
+            return total;
+        }
+
+        function clearNumbers() {
+            numbers.length = 0;
+            document.getElementById('stats').innerHTML = '';
+            renderList();
+        }
+
+        renderList();
+    </script>
+</body>
+</html>

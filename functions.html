@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #fff8e5; }
+        button, input, select { padding: 8px; margin: 4px 0; }
+    </style>
+</head>
+<body>
+    <h2>grade for marks</h2>
+    <input type="number" id="scoreInput" placeholder="0-100" min="0" max="100">
+    <button onclick="showGrade()">Check</button>
+    <p id="gradeResult"></p>
+
+    <h2>Bg color change </h2>
+    <select id="colorChoice">
+        <option value="white">White</option>
+        <option value="lightblue">Light blue</option>
+        <option value="lightgreen">Light green</option>
+        <option value="lightpink">Light pink</option>
+    </select>
+    <button onclick="changeBackground()">Apply</button>
+    <p id="colorMessage"></p>
+
+    <h2>Clock</h2>
+    <p id="clock"></p>
+
+    <script>
+        function showGrade() {
+            const score = parseInt(document.getElementById('scoreInput').value);
+            const result = document.getElementById('gradeResult');
+            if (Number.isNaN(score) || score < 0 || score > 100) {
+                result.innerHTML = 'Enter 0-100.';
+                result.style.color = 'red';
+                return;
+            }
+            let grade = '';
+            let message = '';
+            if (score >= 90) {
+                grade = 'A';
+                message = 'Great!';
+            } else if (score >= 75) {
+                grade = 'B';
+                message = 'Good.';
+            } else if (score >= 60) {
+                grade = 'C';
+                message = 'Keep going.';
+            } else {
+                grade = 'D';
+                message = 'Review more.';
+            }
+            result.innerHTML = `Score: ${score}, Grade: ${grade}, ${message}`;
+            result.style.color = 'blue';
+        }
+
+        function changeBackground() {
+            const color = document.getElementById('colorChoice').value;
+            const message = document.getElementById('colorMessage');
+            if (color === 'lightblue') {
+                document.body.style.backgroundColor = '#d8efff';
+                message.innerHTML = 'Blue chosen.';
+            } else if (color === 'lightgreen') {
+                document.body.style.backgroundColor = '#d8ffd8';
+                message.innerHTML = 'Green chosen.';
+            } else if (color === 'lightpink') {
+                document.body.style.backgroundColor = '#ffe0e7';
+                message.innerHTML = 'Pink chosen.';
+            } else {
+                document.body.style.backgroundColor = 'white';
+                message.innerHTML = 'White chosen.';
+            }
+        }
+
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').innerHTML = `${hours}:${minutes}:${seconds}`;
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
