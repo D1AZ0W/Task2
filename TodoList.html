@@ -20,7 +20,7 @@
     <div id="taskList"></div>
 
     <script>
-        const tasks = [
+        let tasks = JSON.parse(localStorage.getItem("tasks")) || [
             { text: 'Review JS basics', completed: false },
             { text: 'Practice loops', completed: true }
         ];
@@ -28,10 +28,12 @@
         function addTask() {
             const input = document.getElementById('taskInput');
             const text = input.value.trim();
+
             if (text === '') {
                 alert('Type a task.');
                 return;
             }
+            localStorage.setItem("tasks", JSON.stringify(tasks));
             tasks.push({ text, completed: false });
             input.value = '';
             renderTasks();
@@ -55,6 +57,7 @@
         function toggleTask(index) {
             tasks[index].completed = !tasks[index].completed;
             console.log("task is toggled")
+            localStorage.setItem("tasks", JSON.stringify(tasks));
             renderTasks();
         }
 
@@ -62,6 +65,7 @@
             const active = tasks.filter(task => !task.completed);
             tasks.length = 0;
             active.forEach(task => tasks.push(task));
+            localStorage.setItem("tasks", JSON.stringify(tasks));
             renderTasks();
         }
 
