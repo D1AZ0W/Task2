@@ -3,34 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qno.8</title>
+    <title>Change colors</title>
     <style>
         .box{
             border: 5px solid transparent;
             padding: 20px;
         }
-        #first{
-            background-color: red;
-        }
-        #second{
-            background-color: blue;
-        }
-        #third{
-            background-color: green;
-        }
     </style>
     <script>
+        colors=["yellow","green","red","pink","orange","purple","cyan","magenta","brown","gray"];
         function change(){
-            document.getElementById("first").style.backgroundColor="yellow";
-            document.getElementById("second").style.backgroundColor="green";
-            document.getElementById("third").style.backgroundColor="red";
-            document.getElementById("first").style.borderColor="green";
-            document.getElementById("second").style.borderColor="yellow";
-            document.getElementById("third").style.borderColor="blue";
+            var random1=Math.floor(Math.random()*colors.length);
+            var random2=Math.floor(Math.random()*colors.length);
+            var random3=Math.floor(Math.random()*colors.length);
+            document.getElementById("first").style.backgroundColor=colors[random1];
+            document.getElementById("second").style.backgroundColor=colors[random2];
+            document.getElementById("third").style.backgroundColor=colors[random3];
         }
     </script>
 </head>
-<body>
+<body onload="change()">
     <div id="first" class="box">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam nulla, ipsa, maxime vel a officiis dolorem deserunt facere voluptatem cupiditate vero labore debitis libero, odit dolor quod! Eveniet, qui fugit! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad quas incidunt eligendi facilis voluptatum aut quod voluptas, atque tenetur quibusdam unde eaque nemo, ducimus deleniti ea velit. Non, omnis suscipit? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum at voluptatibus quo! Beatae, repellat in neque impedit quo omnis accusamus eveniet asperiores mollitia tempora rem cupiditate ipsum doloribus ullam dolor.
     </div><br>
